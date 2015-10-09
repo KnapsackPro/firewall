@@ -24,7 +24,7 @@ action :enable do
   if active?
     Chef::Log.debug("#{@new_resource} already enabled.")
   else
-    shell_out!('echo yes | ufw enable')
+    shell_out!('echo y | ufw enable')
     Chef::Log.info("#{@new_resource} enabled")
     if @new_resource.log_level
       shell_out!("ufw logging #{@new_resource.log_level}")
